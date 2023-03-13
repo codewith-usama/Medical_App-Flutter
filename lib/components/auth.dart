@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import '../appColor.dart' as app_color;
+import '../app_color.dart' as app_color;
 import '../constant.dart' as cons;
 
 class Auth extends StatelessWidget {
 
-  Auth({required this.text});
+  const Auth({super.key, required this.text, required this.onTap});
 
   final String text;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -14,17 +15,17 @@ class Auth extends StatelessWidget {
       color: app_color.welcomeScreenComponent,
       borderRadius: BorderRadius.circular(10),
       child: InkWell(
-        onTap: () {
-
-        },
+        onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.symmetric(
             vertical: 15,
             horizontal: 40,
           ),
-          child: Text(
-            text,
-            style: cons.authStyle,
+          child: Center(
+            child: Text(
+              text,
+              style: cons.kAuthStyle
+            ),
           ),
         ),
       ),

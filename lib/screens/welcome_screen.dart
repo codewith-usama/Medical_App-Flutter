@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import '../appColor.dart' as app_color;
+import 'package:medical_app/screens/signup_screen.dart';
+import '../app_color.dart' as app_color;
 import '../components/auth.dart';
+import 'login_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -64,13 +66,33 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 60,
+                height: 40,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Auth(text: "Log In"),
-                  Auth(text: "Sign Up")
+                  Auth(
+                    text: "Log In",
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Login(),
+                        )
+                      );
+                    },
+                  ),
+                  Auth(
+                    text: "Sign Up",
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpScreen(),
+                          )
+                      );
+                    },
+                  )
                 ],
               )
             ],
