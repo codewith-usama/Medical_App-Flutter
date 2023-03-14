@@ -1,3 +1,3 @@
 import 'dart:ui';
 
-const Color welcomeScreenComponent = Color(0xFF7165D6);
+const Color kWelcomeScreenComponent = Color(0xFF7165D6);

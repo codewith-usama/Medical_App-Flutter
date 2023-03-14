@@ -17,3 +17,13 @@ const kCreateAccountLoginPageStyle = TextStyle(
   color: Color(0xFF7165D6),
   fontSize: 18
 );
+
+const kNavBarLabelStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 15
+);
+
+const kAlexStyleHomeScreen = TextStyle(
+  fontSize: 35,
+  fontWeight: FontWeight.w500
+);

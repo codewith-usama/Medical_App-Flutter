@@ -12,7 +12,7 @@ class Auth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: app_color.welcomeScreenComponent,
+      color: app_color.kWelcomeScreenComponent,
       borderRadius: BorderRadius.circular(10),
       child: InkWell(
         onTap: onTap,

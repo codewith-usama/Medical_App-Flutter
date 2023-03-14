@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/screens/signup_screen.dart';
+import '../screens/navbar_roots.dart';
+import 'signup_screen.dart';
 import '../app_color.dart' as app_color;
 import '../components/auth.dart';
 import 'login_screen.dart';
@@ -24,11 +25,18 @@ class WelcomeScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const NavBarRoots()
+                      )
+                    );
+                  },
                   child: const Text(
                     "SKIP",
                     style: TextStyle(
-                      color: app_color.welcomeScreenComponent,
+                      color: app_color.kWelcomeScreenComponent,
                       fontSize: 20
                     ),
                   ),
@@ -51,7 +59,7 @@ class WelcomeScreen extends StatelessWidget {
                   letterSpacing: 2,
                   wordSpacing: 1,
                   fontWeight: FontWeight.bold,
-                  color: app_color.welcomeScreenComponent
+                  color: app_color.kWelcomeScreenComponent
                 ),
               ),
               const SizedBox(
@@ -77,7 +85,7 @@ class WelcomeScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Login(),
+                          builder: (context) => const LoginScreen(),
                         )
                       );
                     },

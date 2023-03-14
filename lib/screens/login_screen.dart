@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:medical_app/constant.dart';
 import '../components/auth.dart';
 import 'signup_screen.dart';
+import 'home_screen.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginScreenState extends State<LoginScreen> {
 
   bool passToggle = true;
 
@@ -85,7 +86,12 @@ class _LoginState extends State<Login> {
                     child: Auth(
                         text: "Log In",
                       onTap: () {
-
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomeScreen()
+                            )
+                          );
                       },
                     ),
                   ),

@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constant.dart';
 import '../components/auth.dart ';
+import 'login_screen.dart';
+import 'home_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -25,10 +27,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(
                   height: 10,
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.all(20),
-                //   child: Image.asset('images/doctors.png'),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Image.asset('images/doctors.png'),
+                ),
                 const SizedBox(
                   height: 10,
                 ),
@@ -104,11 +106,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(
                   height: 10,
                 ),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: Auth(
+                      text: "Create Account",
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeScreen()
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      "Don't have any account?",
+                      "Already have an account?",
                       style: kLoginPageBottom,
                     ),
                     TextButton(
@@ -116,12 +136,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const SignUpScreen(),
+                              builder: (context) => const LoginScreen(),
                             )
                         );
                       },
                       child: const Text(
-                        "Create Account",
+                        "Login",
                         style: kCreateAccountLoginPageStyle,
                       ),
                     )
